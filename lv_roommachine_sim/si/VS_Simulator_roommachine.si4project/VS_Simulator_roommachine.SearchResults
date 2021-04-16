@@ -1,0 +1,15 @@
+---- pwd_add_ta Matches (2 in 1 files) ----
+scr_system_setting.c (gui_app\src\gui_create) line 44 : static void pwd_add_ta(lv_obj_t *obj_ta);
+system_setting_pwd_page_create in scr_system_setting.c (gui_app\src\gui_create) : 	pwd_add_ta(obj_ta); //save ta to system setting pwd
+---- psw_wrong_create Matches (2 in 1 files) ----
+pwd_confirm_control in scr_system_setting.c (gui_app\src\gui_create) : 			lv_obj_t *obj_bg = psw_wrong_create();
+scr_system_setting.c (gui_app\src\gui_create) line 624 : static lv_obj_t* psw_wrong_create()
+---- SysSet_return_btn_event_handle Matches (4 in 1 files) ----
+scr_system_setting.c (gui_app\src\gui_create) line 54 : static void SysSet_return_btn_event_handle(lv_obj_t *obj,lv_event_t e);
+setting_enter_create in scr_system_setting.c (gui_app\src\gui_create) : 	lv_obj_set_event_cb(return_btn,SysSet_return_btn_event_handle);
+system_setting_pwd_page_create in scr_system_setting.c (gui_app\src\gui_create) : 	lv_obj_set_event_cb(obj_btn, SysSet_return_btn_event_handle);
+scr_system_setting.c (gui_app\src\gui_create) line 635 : static void SysSet_return_btn_event_handle(lv_obj_t *obj,lv_event_t e)
+---- system_setting_task_create Matches (3 in 1 files) ----
+scr_system_setting.c (gui_app\src\gui_create) line 48 : static uint32_t *system_setting_task_create(lv_obj_t *to_del);
+scr_system_setting.c (gui_app\src\gui_create) line 182 : static uint32_t *system_setting_task_create(lv_obj_t *to_del)
+pwd_confirm_control in scr_system_setting.c (gui_app\src\gui_create) : 			system_setting_task_create(obj_bg);

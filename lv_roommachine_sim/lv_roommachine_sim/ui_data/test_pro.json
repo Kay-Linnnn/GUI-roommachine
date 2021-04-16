@@ -1,0 +1,42 @@
+{
+	"admin_password":	"123456",
+	"security_password":	"88888888",
+	"CueTone_volume":	"20",
+	"local_machine_id":	"50010011010201",
+	"machine_hw_ether":	"00:70:27:00:10:01",
+	"machine_IP":	"192.168.24.18",
+	"machine_submask":	"255.255.0.0",
+	"machine_gateway":	"192.168.1.1",
+	"server_ip":	"192.168.1.108",
+	"software_version":	"1.0.6",
+	"language_setup":	"0",
+	"talk_volume":	"25",
+	"ring_volume":	"25",
+	"key_volume":	"25",
+	"talk_timeout_seconds":	"30",
+	"ring_timeout_seconds":	"30",
+	"sleep_times":	"30",
+	"country":	"replace",
+	"country":	"test",
+	"address":	{
+		"region":	"01",
+		"building":	"002",
+		"unit":	"03"
+	},
+	"test array":	[{
+			"index":	"1",
+			"date":	"2020-1-10",
+			"timer":	"15:24:12",
+			"b_read":	"1"
+		}, {
+			"index":	"2",
+			"date":	"2020-1-10",
+			"timer":	"15:24:12",
+			"b_read":	"1"
+		}, {
+			"index":	"3",
+			"date":	"2020-1-10",
+			"timer":	"15:24:12",
+			"b_read":	"1"
+		}]
+}

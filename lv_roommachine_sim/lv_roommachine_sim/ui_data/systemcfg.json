@@ -1,0 +1,53 @@
+{
+	"admin_password":	"333333",
+	"security_password":	"88888888",
+	"CueTone_volume":	"20",
+	"local_machine_id":	"50010011010201",
+	"machine_hw_ether":	"00:70:27:00:10:01",
+	"machine_IP":	"192.168.24.18",
+	"machine_submask":	"255.255.0.0",
+	"machine_gateway":	"192.168.1.1",
+	"server_ip":	"192.168.1.108",
+	"software_version":	"1.0.6",
+	"language_setup":	"0",
+	"talk_volume":	"25",
+	"ring_volume":	"25",
+	"key_volume":	"25",
+	"talk_timeout_seconds":	"30",
+	"ring_timeout_seconds":	"30",
+	"sleep_times":	"30",
+	"country":	"test",
+	"country":	"test",
+	"address":	{
+		"region":	"01",
+		"building":	"001",
+		"unit":	"1",
+		"floor":	"01",
+		"room":	"03",
+		"branch":	"01"
+	},
+	"screen protect":	{
+		"time":	"3",
+		"mode":	"0"
+	},
+	"sound":	{
+		"voice_value":	"14",
+		"bell_value":	"19",
+		"touch_value":	"3",
+		"microphone_value":	"15",
+		"ring_type":	"3"
+	},
+	"system information":	{
+		"host_address":	"01区01栋01单元0001房01分机",
+		"server_ip":	"192.168.1.108",
+		"machine_hw_ether":	"00:70:27:00:10:01",
+		"software_versionmachine_ip":	"1.0.6",
+		"machine_submask":	"192.168.24.19",
+		"machine_gateway":	"255.255.0.0",
+		"machine_sin":	"192.168.1.1",
+		"region":	"50010011010201"
+	},
+	"general password":	{
+		"security":	"888888"
+	}
+}

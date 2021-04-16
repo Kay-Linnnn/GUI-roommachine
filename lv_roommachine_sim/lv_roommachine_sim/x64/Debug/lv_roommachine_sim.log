@@ -1,0 +1,10 @@
+﻿  scr_system_setting.c
+  data_tencell.c
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(404): warning C4090: 'function': different 'const' qualifiers
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(422): warning C4090: 'function': different 'const' qualifiers
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(520): warning C4090: 'function': different 'const' qualifiers
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(609): warning C4090: 'function': different 'const' qualifiers
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(813): warning C4090: 'function': different 'const' qualifiers
+d:\f_code\vs\lvgl_simulator\lv_roommachine_sim\lv_roommachine_sim\gui_app\src\gui_logic\data_tencell.c(873): warning C4090: 'function': different 'const' qualifiers
+  Generating Code...
+  lv_roommachine_sim.vcxproj -> D:\F_code\VS\Lvgl_simulator\lv_roommachine_sim\x64\Debug\lv_roommachine_sim.exe

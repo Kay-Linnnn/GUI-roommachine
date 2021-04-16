@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{2D3698BD-D7AE-4B93-B6CA-66B2618F1EE9}</ProjectGuid>
+    <RootNamespace>lvroommachinesim</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\gui_app\src\pic_font_file;.\include;.\fnc;.\cJSON;.\gui_app\src\gui_universal_api;.\gui_app\src\gui_communication;.\gui_app\src\gui_create;.\gui_app\src\gui_logic;.\gui_app\src\gui_sys_control;.\gui_app;.\SDL2\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>.\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cJSON\cJSON.h" />
+    <ClInclude Include="fnc\fnc_DataJsonAnalytic.h" />
+    <ClInclude Include="fnc\fnc_VisitorsMesgFTP.h" />
+    <ClInclude Include="gui_app\ex_need\temp_misc.h" />
+    <ClInclude Include="gui_app\gui_app.h" />
+    <ClInclude Include="gui_app\src\gui_communication\gui_commu_center.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_block.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_Call.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_Dial.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_doorCCTV.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_home.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_security.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_system_setting.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_visitor_left.h" />
+    <ClInclude Include="gui_app\src\gui_create\scr_VoiceSetting.h" />
+    <ClInclude Include="gui_app\src\gui_create\sigma_star_theme.h" />
+    <ClInclude Include="gui_app\src\gui_logic\data_tencell.h" />
+    <ClInclude Include="gui_app\src\gui_logic\gui_app_datatype.h" />
+    <ClInclude Include="gui_app\src\gui_logic\GUI_self_define.h" />
+    <ClInclude Include="gui_app\src\gui_logic\stack_lvgl_sys.h" />
+    <ClInclude Include="gui_app\src\gui_sys_control\gui_scr_sys.h" />
+    <ClInclude Include="gui_app\src\gui_sys_control\lv_fs_if.h" />
+    <ClInclude Include="gui_app\src\gui_universal_api\file_system_test.h" />
+    <ClInclude Include="gui_app\src\gui_universal_api\message_mechanism.h" />
+    <ClInclude Include="gui_app\src\gui_universal_api\universal_api_v7.h" />
+    <ClInclude Include="include\Communication_ErrorCode.h" />
+    <ClInclude Include="include\config_project.h" />
+    <ClInclude Include="include\dirent.h" />
+    <ClInclude Include="lvgl\examples\porting\lv_port_disp_template.h" />
+    <ClInclude Include="lvgl\examples\porting\lv_port_fs_template.h" />
+    <ClInclude Include="lvgl\examples\porting\lv_port_indev_template.h" />
+    <ClInclude Include="lvgl\lvgl.h" />
+    <ClInclude Include="lvgl\lv_conf_template.h" />
+    <ClInclude Include="lvgl\src\lvgl.h" />
+    <ClInclude Include="lvgl\src\lv_api_map.h" />
+    <ClInclude Include="lvgl\src\lv_conf_internal.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_disp.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_group.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_indev.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_obj.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_obj_style_dec.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_refr.h" />
+    <ClInclude Include="lvgl\src\lv_core\lv_style.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_arc.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_blend.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_img.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_label.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_line.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_mask.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_rect.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_draw_triangle.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_img_buf.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_img_cache.h" />
+    <ClInclude Include="lvgl\src\lv_draw\lv_img_decoder.h" />
+    <ClInclude Include="lvgl\src\lv_font\lv_font.h" />
+    <ClInclude Include="lvgl\src\lv_font\lv_font_fmt_txt.h" />
+    <ClInclude Include="lvgl\src\lv_font\lv_symbol_def.h" />
+    <ClInclude Include="lvgl\src\lv_gpu\lv_gpu_stm32_dma2d.h" />
+    <ClInclude Include="lvgl\src\lv_hal\lv_hal.h" />
+    <ClInclude Include="lvgl\src\lv_hal\lv_hal_disp.h" />
+    <ClInclude Include="lvgl\src\lv_hal\lv_hal_indev.h" />
+    <ClInclude Include="lvgl\src\lv_hal\lv_hal_tick.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_anim.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_area.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_async.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_bidi.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_color.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_debug.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_fs.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_gc.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_ll.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_log.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_math.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_mem.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_printf.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_task.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_templ.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_txt.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_txt_ap.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_types.h" />
+    <ClInclude Include="lvgl\src\lv_misc\lv_utils.h" />
+    <ClInclude Include="lvgl\src\lv_themes\lv_theme.h" />
+    <ClInclude Include="lvgl\src\lv_themes\lv_theme_empty.h" />
+    <ClInclude Include="lvgl\src\lv_themes\lv_theme_material.h" />
+    <ClInclude Include="lvgl\src\lv_themes\lv_theme_mono.h" />
+    <ClInclude Include="lvgl\src\lv_themes\lv_theme_template.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_arc.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_bar.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_btn.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_btnmatrix.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_calendar.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_canvas.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_chart.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_checkbox.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_cont.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_cpicker.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_dropdown.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_gauge.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_img.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_imgbtn.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_keyboard.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_label.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_led.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_line.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_linemeter.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_list.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_msgbox.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_objmask.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_objx_templ.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_page.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_roller.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_slider.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_spinbox.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_spinner.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_switch.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_table.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_tabview.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_textarea.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_tileview.h" />
+    <ClInclude Include="lvgl\src\lv_widgets\lv_win.h" />
+    <ClInclude Include="lvgl\tests\lv_test_assert.h" />
+    <ClInclude Include="lvgl\tests\lv_test_conf.h" />
+    <ClInclude Include="lvgl\tests\lv_test_core\lv_test_core.h" />
+    <ClInclude Include="lvgl\tests\lv_test_core\lv_test_obj.h" />
+    <ClInclude Include="lvgl\tests\lv_test_core\lv_test_style.h" />
+    <ClInclude Include="lvgl\tests\lv_test_objx\lv_test_cont.h" />
+    <ClInclude Include="lv_conf.h" />
+    <ClInclude Include="lv_drivers\display\fbdev.h" />
+    <ClInclude Include="lv_drivers\display\monitor.h" />
+    <ClInclude Include="lv_drivers\display\R61581.h" />
+    <ClInclude Include="lv_drivers\display\SHARP_MIP.h" />
+    <ClInclude Include="lv_drivers\display\SSD1963.h" />
+    <ClInclude Include="lv_drivers\display\ST7565.h" />
+    <ClInclude Include="lv_drivers\display\UC1610.h" />
+    <ClInclude Include="lv_drivers\indev\AD_touch.h" />
+    <ClInclude Include="lv_drivers\indev\evdev.h" />
+    <ClInclude Include="lv_drivers\indev\FT5406EE8.h" />
+    <ClInclude Include="lv_drivers\indev\keyboard.h" />
+    <ClInclude Include="lv_drivers\indev\libinput_drv.h" />
+    <ClInclude Include="lv_drivers\indev\mouse.h" />
+    <ClInclude Include="lv_drivers\indev\mousewheel.h" />
+    <ClInclude Include="lv_drivers\indev\XPT2046.h" />
+    <ClInclude Include="lv_drivers\lv_drv_conf_templ.h" />
+    <ClInclude Include="lv_drivers\win_drv.h" />
+    <ClInclude Include="lv_drv_conf.h" />
+    <ClInclude Include="lv_examples\lv_examples.h" />
+    <ClInclude Include="lv_examples\lv_ex_conf_templ.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_benchmark\lv_demo_benchmark.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_keypad_encoder\lv_demo_keypad_encoder.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_printer\lv_demo_printer.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_printer\lv_demo_printer_theme.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_stress\lv_demo_stress.h" />
+    <ClInclude Include="lv_examples\src\lv_demo_widgets\lv_demo_widgets.h" />
+    <ClInclude Include="lv_examples\src\lv_examples.h" />
+    <ClInclude Include="lv_examples\src\lv_ex_get_started\lv_ex_get_started.h" />
+    <ClInclude Include="lv_examples\src\lv_ex_style\lv_ex_style.h" />
+    <ClInclude Include="lv_examples\src\lv_ex_widgets\lv_ex_widgets.h" />
+    <ClInclude Include="lv_ex_conf.h" />
+    <ClInclude Include="SDL2\include\begin_code.h" />
+    <ClInclude Include="SDL2\include\close_code.h" />
+    <ClInclude Include="SDL2\include\SDL.h" />
+    <ClInclude Include="SDL2\include\SDL_assert.h" />
+    <ClInclude Include="SDL2\include\SDL_atomic.h" />
+    <ClInclude Include="SDL2\include\SDL_audio.h" />
+    <ClInclude Include="SDL2\include\SDL_bits.h" />
+    <ClInclude Include="SDL2\include\SDL_blendmode.h" />
+    <ClInclude Include="SDL2\include\SDL_clipboard.h" />
+    <ClInclude Include="SDL2\include\SDL_config.h" />
+    <ClInclude Include="SDL2\include\SDL_config_android.h" />
+    <ClInclude Include="SDL2\include\SDL_config_iphoneos.h" />
+    <ClInclude Include="SDL2\include\SDL_config_macosx.h" />
+    <ClInclude Include="SDL2\include\SDL_config_minimal.h" />
+    <ClInclude Include="SDL2\include\SDL_config_pandora.h" />
+    <ClInclude Include="SDL2\include\SDL_config_psp.h" />
+    <ClInclude Include="SDL2\include\SDL_config_windows.h" />
+    <ClInclude Include="SDL2\include\SDL_config_winrt.h" />
+    <ClInclude Include="SDL2\include\SDL_config_wiz.h" />
+    <ClInclude Include="SDL2\include\SDL_copying.h" />
+    <ClInclude Include="SDL2\include\SDL_cpuinfo.h" />
+    <ClInclude Include="SDL2\include\SDL_egl.h" />
+    <ClInclude Include="SDL2\include\SDL_endian.h" />
+    <ClInclude Include="SDL2\include\SDL_error.h" />
+    <ClInclude Include="SDL2\include\SDL_events.h" />
+    <ClInclude Include="SDL2\include\SDL_filesystem.h" />
+    <ClInclude Include="SDL2\include\SDL_gamecontroller.h" />
+    <ClInclude Include="SDL2\include\SDL_gesture.h" />
+    <ClInclude Include="SDL2\include\SDL_haptic.h" />
+    <ClInclude Include="SDL2\include\SDL_hints.h" />
+    <ClInclude Include="SDL2\include\SDL_joystick.h" />
+    <ClInclude Include="SDL2\include\SDL_keyboard.h" />
+    <ClInclude Include="SDL2\include\SDL_keycode.h" />
+    <ClInclude Include="SDL2\include\SDL_loadso.h" />
+    <ClInclude Include="SDL2\include\SDL_log.h" />
+    <ClInclude Include="SDL2\include\SDL_main.h" />
+    <ClInclude Include="SDL2\include\SDL_messagebox.h" />
+    <ClInclude Include="SDL2\include\SDL_mouse.h" />
+    <ClInclude Include="SDL2\include\SDL_mutex.h" />
+    <ClInclude Include="SDL2\include\SDL_name.h" />
+    <ClInclude Include="SDL2\include\SDL_opengl.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles2.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles2_gl2.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles2_gl2ext.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles2_gl2platform.h" />
+    <ClInclude Include="SDL2\include\SDL_opengles2_khrplatform.h" />
+    <ClInclude Include="SDL2\include\SDL_opengl_glext.h" />
+    <ClInclude Include="SDL2\include\SDL_pixels.h" />
+    <ClInclude Include="SDL2\include\SDL_platform.h" />
+    <ClInclude Include="SDL2\include\SDL_power.h" />
+    <ClInclude Include="SDL2\include\SDL_quit.h" />
+    <ClInclude Include="SDL2\include\SDL_rect.h" />
+    <ClInclude Include="SDL2\include\SDL_render.h" />
+    <ClInclude Include="SDL2\include\SDL_revision.h" />
+    <ClInclude Include="SDL2\include\SDL_rwops.h" />
+    <ClInclude Include="SDL2\include\SDL_scancode.h" />
+    <ClInclude Include="SDL2\include\SDL_sensor.h" />
+    <ClInclude Include="SDL2\include\SDL_shape.h" />
+    <ClInclude Include="SDL2\include\SDL_stdinc.h" />
+    <ClInclude Include="SDL2\include\SDL_surface.h" />
+    <ClInclude Include="SDL2\include\SDL_system.h" />
+    <ClInclude Include="SDL2\include\SDL_syswm.h" />
+    <ClInclude Include="SDL2\include\SDL_test.h" />
+    <ClInclude Include="SDL2\include\SDL_test_assert.h" />
+    <ClInclude Include="SDL2\include\SDL_test_common.h" />
+    <ClInclude Include="SDL2\include\SDL_test_compare.h" />
+    <ClInclude Include="SDL2\include\SDL_test_crc32.h" />
+    <ClInclude Include="SDL2\include\SDL_test_font.h" />
+    <ClInclude Include="SDL2\include\SDL_test_fuzzer.h" />
+    <ClInclude Include="SDL2\include\SDL_test_harness.h" />
+    <ClInclude Include="SDL2\include\SDL_test_images.h" />
+    <ClInclude Include="SDL2\include\SDL_test_log.h" />
+    <ClInclude Include="SDL2\include\SDL_test_md5.h" />
+    <ClInclude Include="SDL2\include\SDL_test_memory.h" />
+    <ClInclude Include="SDL2\include\SDL_test_random.h" />
+    <ClInclude Include="SDL2\include\SDL_thread.h" />
+    <ClInclude Include="SDL2\include\SDL_timer.h" />
+    <ClInclude Include="SDL2\include\SDL_touch.h" />
+    <ClInclude Include="SDL2\include\SDL_types.h" />
+    <ClInclude Include="SDL2\include\SDL_version.h" />
+    <ClInclude Include="SDL2\include\SDL_video.h" />
+    <ClInclude Include="SDL2\include\SDL_vulkan.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cJSON\cJSON.c" />
+    <ClCompile Include="fnc\fnc_DataJsonAnalytic.c" />
+    <ClCompile Include="fnc\fnc_VisitorsMesgFTP.c" />
+    <ClCompile Include="gui_app\ex_need\temp_misc.c" />
+    <ClCompile Include="gui_app\src\gui_communication\gui_commu_center.c" />
+    <ClCompile Include="gui_app\src\gui_create\camera_64_64.c" />
+    <ClCompile Include="gui_app\src\gui_create\dial_hand_green_200_200.c" />
+    <ClCompile Include="gui_app\src\gui_create\home_internet_80_80.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_camera_65_82.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_cctv_6464.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_door_mag_5848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_elevator_6464.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_emergency_btn_4848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_fire_4848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_gas_53_48.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_infrared_4848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_message_3232.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_phone_call_6464.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_security_8080.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_setting_4848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_setting_8080.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_smoke_4848.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_SOS_8080.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_visitor_profile_2424.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_voice_48_42.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_voice_5050.c" />
+    <ClCompile Include="gui_app\src\gui_create\icon_window_mag_48_48.c" />
+    <ClCompile Include="gui_app\src\gui_create\lovelyghost_128128.c" />
+    <ClCompile Include="gui_app\src\gui_create\lovelyghost_6464.c" />
+    <ClCompile Include="gui_app\src\gui_create\mouse_cursor_icon.c" />
+    <ClCompile Include="gui_app\src\gui_create\profile_head_200_200.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_block.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_Call.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_Dial.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_doorCCTV.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_home.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_security.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_system_setting.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_visitor_left.c" />
+    <ClCompile Include="gui_app\src\gui_create\scr_VoiceSetting.c" />
+    <ClCompile Include="gui_app\src\gui_create\sigma_star_theme.c" />
+    <ClCompile Include="gui_app\src\gui_create\test_80_80.c" />
+    <ClCompile Include="gui_app\src\gui_logic\data_tencell.c" />
+    <ClCompile Include="gui_app\src\gui_logic\GUI_self_define.c" />
+    <ClCompile Include="gui_app\src\gui_logic\stack_lvgl_sys.c" />
+    <ClCompile Include="gui_app\src\gui_sys_control\gui_scr_sys.c" />
+    <ClCompile Include="gui_app\src\gui_sys_control\lv_fs_if.c" />
+    <ClCompile Include="gui_app\src\gui_sys_control\lv_fs_pc.c" />
+    <ClCompile Include="gui_app\src\gui_universal_api\file_system_test.c" />
+    <ClCompile Include="gui_app\src\gui_universal_api\font_test_gb.c" />
+    <ClCompile Include="gui_app\src\gui_universal_api\message_mechanism.c" />
+    <ClCompile Include="gui_app\src\gui_universal_api\universal_api_v7.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_cctv_44_40.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_dial_35_34.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_elv_down_41_48.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_elv_up_41_48.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_security_35_35.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_setting_36_36.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_sos_37_37.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_visitor_37_33.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_visitor_circle_28_28.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\icon_home_volume_37_33.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\SC_MicroSoft_YaHei_R12.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\SC_MicroSoft_YaHei_R16.c" />
+    <ClCompile Include="gui_app\src\pic_font_file\SC_MicroSoft_YaHei_R18.c" />
+    <ClCompile Include="lvgl\examples\porting\lv_port_disp_template.c" />
+    <ClCompile Include="lvgl\examples\porting\lv_port_fs_template.c" />
+    <ClCompile Include="lvgl\examples\porting\lv_port_indev_template.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_disp.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_group.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_indev.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_obj.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_refr.c" />
+    <ClCompile Include="lvgl\src\lv_core\lv_style.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_arc.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_blend.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_img.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_label.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_line.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_mask.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_rect.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_draw_triangle.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_img_buf.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_img_cache.c" />
+    <ClCompile Include="lvgl\src\lv_draw\lv_img_decoder.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_dejavu_16_persian_hebrew.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_fmt_txt.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_12.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_12_subpx.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_14.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_16.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_18.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_20.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_22.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_24.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_26.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_28.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_28_compressed.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_30.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_32.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_34.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_36.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_38.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_40.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_42.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_44.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_46.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_montserrat_48.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_simsun_16_cjk.c" />
+    <ClCompile Include="lvgl\src\lv_font\lv_font_unscii_8.c" />
+    <ClCompile Include="lvgl\src\lv_gpu\lv_gpu_stm32_dma2d.c" />
+    <ClCompile Include="lvgl\src\lv_hal\lv_hal_disp.c" />
+    <ClCompile Include="lvgl\src\lv_hal\lv_hal_indev.c" />
+    <ClCompile Include="lvgl\src\lv_hal\lv_hal_tick.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_anim.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_area.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_async.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_bidi.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_color.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_debug.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_fs.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_gc.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_ll.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_log.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_math.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_mem.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_printf.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_task.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_templ.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_txt.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_txt_ap.c" />
+    <ClCompile Include="lvgl\src\lv_misc\lv_utils.c" />
+    <ClCompile Include="lvgl\src\lv_themes\lv_theme.c" />
+    <ClCompile Include="lvgl\src\lv_themes\lv_theme_empty.c" />
+    <ClCompile Include="lvgl\src\lv_themes\lv_theme_material.c" />
+    <ClCompile Include="lvgl\src\lv_themes\lv_theme_mono.c" />
+    <ClCompile Include="lvgl\src\lv_themes\lv_theme_template.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_arc.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_bar.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_btn.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_btnmatrix.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_calendar.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_canvas.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_chart.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_checkbox.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_cont.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_cpicker.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_dropdown.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_gauge.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_img.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_imgbtn.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_keyboard.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_label.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_led.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_line.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_linemeter.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_list.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_msgbox.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_objmask.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_objx_templ.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_page.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_roller.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_slider.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_spinbox.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_spinner.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_switch.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_table.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_tabview.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_textarea.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_tileview.c" />
+    <ClCompile Include="lvgl\src\lv_widgets\lv_win.c" />
+    <ClCompile Include="lvgl\tests\lv_test_assert.c" />
+    <ClCompile Include="lvgl\tests\lv_test_core\lv_test_core.c" />
+    <ClCompile Include="lvgl\tests\lv_test_core\lv_test_obj.c" />
+    <ClCompile Include="lvgl\tests\lv_test_core\lv_test_style.c" />
+    <ClCompile Include="lvgl\tests\lv_test_main.c" />
+    <ClCompile Include="lvgl\tests\lv_test_objx\lv_test_cont.c" />
+    <ClCompile Include="lv_drivers\display\fbdev.c" />
+    <ClCompile Include="lv_drivers\display\monitor.c" />
+    <ClCompile Include="lv_drivers\display\R61581.c" />
+    <ClCompile Include="lv_drivers\display\SHARP_MIP.c" />
+    <ClCompile Include="lv_drivers\display\SSD1963.c" />
+    <ClCompile Include="lv_drivers\display\ST7565.c" />
+    <ClCompile Include="lv_drivers\display\UC1610.c" />
+    <ClCompile Include="lv_drivers\indev\AD_touch.c" />
+    <ClCompile Include="lv_drivers\indev\evdev.c" />
+    <ClCompile Include="lv_drivers\indev\FT5406EE8.c" />
+    <ClCompile Include="lv_drivers\indev\keyboard.c" />
+    <ClCompile Include="lv_drivers\indev\libinput.c" />
+    <ClCompile Include="lv_drivers\indev\mouse.c" />
+    <ClCompile Include="lv_drivers\indev\mousewheel.c" />
+    <ClCompile Include="lv_drivers\indev\XPT2046.c" />
+    <ClCompile Include="lv_drivers\win_drv.c" />
+    <ClCompile Include="lv_examples\assets\img_cogwheel_alpha16.c" />
+    <ClCompile Include="lv_examples\assets\img_cogwheel_argb.c" />
+    <ClCompile Include="lv_examples\assets\img_cogwheel_chroma_keyed.c" />
+    <ClCompile Include="lv_examples\assets\img_cogwheel_indexed16.c" />
+    <ClCompile Include="lv_examples\assets\img_cogwheel_rgb.c" />
+    <ClCompile Include="lv_examples\assets\lv_font_montserrat_12_compr_az.c" />
+    <ClCompile Include="lv_examples\assets\lv_font_montserrat_16_compr_az.c" />
+    <ClCompile Include="lv_examples\assets\lv_font_montserrat_28_compr_az.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_benchmark\lv_demo_benchmark.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_keypad_encoder\lv_demo_keypad_encoder.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_bright.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_eco.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_hue.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_pc.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_tel.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_icon_wifi.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_btn_bg_1.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_btn_bg_2.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_btn_bg_3.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_btn_bg_4.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_cloud.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_copy.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_internet.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_mobile.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_no_internet.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_phone.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_print.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_printer2.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_ready.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_scan.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_scan_example.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_setup.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_usb.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\images\lv_demo_printer_img_wave.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\lv_demo_printer.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\lv_demo_printer_theme.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_printer\temp_imgs\test_transp_1.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_stress\lv_demo_stress.c" />
+    <ClCompile Include="lv_examples\src\lv_demo_widgets\lv_demo_widgets.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_get_started\lv_ex_get_started_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_get_started\lv_ex_get_started_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_get_started\lv_ex_get_started_3.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_10.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_11.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_3.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_4.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_5.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_6.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_7.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_8.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_style\lv_ex_style_9.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_arc\lv_ex_arc_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_arc\lv_ex_arc_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_bar\lv_ex_bar_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_btnmatrix\lv_ex_btnmatrix_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_btn\lv_ex_btn_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_btn\lv_ex_btn_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_calendar\lv_ex_calendar_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_canvas\lv_ex_canvas_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_canvas\lv_ex_canvas_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_chart\lv_ex_chart_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_chart\lv_ex_chart_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_checkbox\lv_ex_checkbox_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_cont\lv_ex_cont_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_cpicker\lv_ex_cpicker_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_cpicker\lv_ex_cpicker_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_dropdown\lv_ex_dropdown_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_dropdown\lv_ex_dropdown_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_gauge\lv_ex_gauge_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_imgbtn\imgbtn_blue.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_imgbtn\imgbtn_green.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_imgbtn\lv_ex_imgbtn_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_img\lv_ex_img_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_img\lv_ex_img_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_img\lv_ex_img_3.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_keyboard\lv_ex_keyboard_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_label\lv_ex_label_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_label\lv_ex_label_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_label\lv_ex_label_3.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_led\lv_ex_led_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_linemeter\lv_ex_linemeter_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_line\lv_ex_line_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_list\lv_ex_list_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_msgbox\lv_ex_msgbox_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_msgbox\lv_ex_msgbox_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_objmask\lv_ex_objmask_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_objmask\lv_ex_objmask_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_obj\lv_ex_obj_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_page\lv_ex_page_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_roller\lv_ex_roller_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_slider\lv_ex_slider_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_slider\lv_ex_slider_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_spinbox\lv_ex_spinbox_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_spinner\lv_ex_spinner_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_switch\lv_ex_switch_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_table\lv_ex_table_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_tabview\lv_ex_tabview_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_templ.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_textarea\lv_ex_textarea_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_textarea\lv_ex_textarea_2.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_textarea\lv_ex_textarea_3.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_tileview\lv_ex_tileview_1.c" />
+    <ClCompile Include="lv_examples\src\lv_ex_widgets\lv_ex_win\lv_ex_win_1.c" />
+    <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDL2.dll" />
+    <None Include="SDL2\lib\x64\SDL2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL2\lib\x64\SDL2.lib" />
+    <Library Include="SDL2\lib\x64\SDL2main.lib" />
+    <Library Include="SDL2\lib\x64\SDL2test.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
